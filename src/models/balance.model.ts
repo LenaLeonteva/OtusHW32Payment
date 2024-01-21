@@ -17,14 +17,12 @@ export class Balance extends Entity {
    *
    */
   @property({
-    jsonSchema: {
-      type: 'number',
-      format: 'int32',
-      minimum: 0,
-      maximum: 2147483647,
-      id: true,
-      generated: false,
-    }
+    type: 'number',
+    format: 'int32',
+    minimum: 0,
+    maximum: 2147483647,
+    id: true,
+    generated: false,
   })
   user_id: number;
 
@@ -32,9 +30,7 @@ export class Balance extends Entity {
    *
    */
   @property({
-    jsonSchema: {
-      type: 'string',
-    }
+    type: 'string',
   })
   account?: string;
 
@@ -42,12 +38,10 @@ export class Balance extends Entity {
    *
    */
   @property({
-    jsonSchema: {
-      type: 'number',
-      format: 'float',
-      minimum: 0,
-      maximum: 3.402823669209385e+38,
-    }
+    type: 'number',
+    format: 'float',
+    minimum: 0,
+    maximum: 3.402823669209385e+38,
   })
   balance: number;
 

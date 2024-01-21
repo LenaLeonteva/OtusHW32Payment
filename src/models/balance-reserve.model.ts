@@ -17,11 +17,9 @@ export class BalanceReserve extends Entity {
    *
    */
   @property({
-    jsonSchema: {
-      type: 'string',
-      id: true,
-      generated: false,
-    }
+    type: 'string',
+    id: true,
+    generated: false,
   })
   order_id: string;
 
@@ -29,12 +27,10 @@ export class BalanceReserve extends Entity {
    *
    */
   @property({
-    jsonSchema: {
-      type: 'number',
-      format: 'int32',
-      minimum: 0,
-      maximum: 2147483647,
-    }
+    type: 'number',
+    format: 'int32',
+    minimum: 0,
+    maximum: 2147483647,
   })
   user_id?: number;
 
@@ -42,12 +38,10 @@ export class BalanceReserve extends Entity {
    *
    */
   @property({
-    jsonSchema: {
-      type: 'number',
-      format: 'float',
-      minimum: 0,
-      maximum: 3.402823669209385e+38,
-    }
+    type: 'number',
+    format: 'float',
+    minimum: 0,
+    maximum: 3.402823669209385e+38,
   })
   price?: number;
 
@@ -55,9 +49,7 @@ export class BalanceReserve extends Entity {
    *
    */
   @property({
-    jsonSchema: {
-      type: 'boolean',
-    }
+    type: 'boolean',
   })
   completed?: boolean;
 

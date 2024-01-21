@@ -1,0 +1,50 @@
+###
+GET http://127.0.0.1:3000/ping
+
+
+###
+POST http://127.0.0.1:3000/balance/add
+Content-Type: application/json
+
+{
+  "user_id": 2,
+  "account": "448484864684684",
+  "balance": 1000.50
+}
+
+###
+POST http://127.0.0.1:3000/balance/add
+Content-Type: application/json
+
+{
+  "user_id": 3,
+  "account": "448484864184684",
+  "balance": 9000.50
+}
+
+###
+POST http://127.0.0.1:3000/balance/reserve
+Content-Type: application/json
+
+{
+    "order_id": "abcd",
+    "user_id": 1,
+    "price": 50
+}
+
+###
+DELETE http://127.0.0.1:3000/balance/reserve
+Content-Type: application/json
+
+{
+    "order_id": "abcd"
+}
+
+###
+POST http://127.0.0.1:3000/balance/reserve
+Content-Type: application/json
+
+{
+    "order_id": "abcd",
+    "completed": true
+}

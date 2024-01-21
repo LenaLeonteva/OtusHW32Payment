@@ -94,14 +94,15 @@ export class OpenApiController {
     required: true,
   }) _requestBody: Balance): Promise<unknown> {
     const id = _requestBody.user_id;
-    let sum = (await this.balanceRepo.findById(id)).balance;
-    if (sum) {
-      await this.balanceRepo.updateById(id, {balance: sum + _requestBody.balance})
-      return
-    } else {
+    let sum = 0
+    try {
+      sum = (await this.balanceRepo.findById(id)).balance;
+    } catch {
       const result = await this.balanceRepo.create(_requestBody)
       return result
     }
+    await this.balanceRepo.updateById(id, {balance: sum + _requestBody.balance})
+    return
   }
   /**
    *

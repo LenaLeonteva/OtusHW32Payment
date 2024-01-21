@@ -1,0 +1,15 @@
+{
+  "ids": {
+    "Balance": 3,
+    "BalanceReserve": 3
+  },
+  "models": {
+    "Balance": {
+      "1": "{\"user_id\":1,\"account\":\"448484864684684\",\"balance\":950.5}",
+      "2": "{\"user_id\":2,\"account\":\"448484864684684\",\"balance\":2001}"
+    },
+    "BalanceReserve": {
+      "abcd": "{\"order_id\":\"abcd\",\"user_id\":1,\"price\":50,\"completed\":true}"
+    }
+  }
+}
