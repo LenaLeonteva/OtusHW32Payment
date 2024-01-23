@@ -139,6 +139,7 @@ export class OpenApiController {
     description: 'Created reserve balance',
     required: true,
   }) _requestBody: BalanceReserve): Promise<unknown> {
+    console.log("RESERVE", _requestBody);
     const orderID = _requestBody.order_id;
     if (_requestBody.completed) {
       await this.reserveRepo.updateById(orderID, {completed: true});
@@ -195,6 +196,7 @@ export class OpenApiController {
     description: 'Created reserve balance',
     required: true,
   }) _requestBody: BalanceReserve): Promise<unknown> {
+    console.log('DELETE', _requestBody);
     let orderID = _requestBody.order_id;
     let reserved = await this.reserveRepo.findById(orderID);
     let userID = reserved.user_id;

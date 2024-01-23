@@ -1,15 +1,19 @@
 {
   "ids": {
     "Balance": 3,
-    "BalanceReserve": 3
+    "BalanceReserve": 10
   },
   "models": {
     "Balance": {
-      "1": "{\"user_id\":1,\"account\":\"448484864684684\",\"balance\":950.5}",
-      "2": "{\"user_id\":2,\"account\":\"448484864684684\",\"balance\":2001}"
+      "1": "{\"user_id\":1,\"account\":\"448484864684684\",\"balance\":750.5}",
+      "2": "{\"user_id\":2,\"account\":\"448484864684684\",\"balance\":1789}"
     },
     "BalanceReserve": {
-      "abcd": "{\"order_id\":\"abcd\",\"user_id\":1,\"price\":50,\"completed\":true}"
+      "abcd": "{\"order_id\":\"abcd\",\"user_id\":1,\"price\":50,\"completed\":true}",
+      "3a4f1db8-ab59-4bb1-9fdf-e8b4af2bb35a": "{\"order_id\":\"3a4f1db8-ab59-4bb1-9fdf-e8b4af2bb35a\",\"user_id\":1,\"price\":100}",
+      "f0884665-33f0-49e5-bfd9-0e4bba7537ff": "{\"order_id\":\"f0884665-33f0-49e5-bfd9-0e4bba7537ff\",\"user_id\":1,\"price\":100}",
+      "733a6619-4991-40af-bafa-303f7e230c81": "{\"order_id\":\"733a6619-4991-40af-bafa-303f7e230c81\",\"user_id\":2,\"price\":105}",
+      "a9dcd83b-2d4c-43e8-888b-ad8c73ae4989": "{\"order_id\":\"a9dcd83b-2d4c-43e8-888b-ad8c73ae4989\",\"user_id\":2,\"price\":107}"
     }
   }
 }

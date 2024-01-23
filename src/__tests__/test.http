@@ -1,9 +1,10 @@
+@baseurl=http://127.0.0.1:3001
 ###
-GET http://127.0.0.1:3000/ping
+GET {{baseurl}}/ping
 
 
 ###
-POST http://127.0.0.1:3000/balance/add
+POST {{baseurl}}/balance/add
 Content-Type: application/json
 
 {
@@ -13,7 +14,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:3000/balance/add
+POST {{baseurl}}/balance/add
 Content-Type: application/json
 
 {
@@ -23,7 +24,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:3000/balance/reserve
+POST {{baseurl}}/balance/reserve
 Content-Type: application/json
 
 {
@@ -33,7 +34,18 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://127.0.0.1:3000/balance/reserve
+POST {{baseurl}}/balance/reserve
+Content-Type: application/json
+
+
+{
+  "order_id":"1b683c1d-4988-4a99-a1c2-cd2f5c881406",
+  "user_id":1,
+  "price":1000
+}
+
+###
+DELETE {{baseurl}}/balance/reserve
 Content-Type: application/json
 
 {
@@ -41,7 +53,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:3000/balance/reserve
+POST {{baseurl}}/balance/reserve
 Content-Type: application/json
 
 {
