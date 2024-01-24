@@ -90,7 +90,7 @@ export class OpenApiController {
         },
       },
     },
-    description: 'Created courier',
+    description: 'Created balance',
     required: true,
   }) _requestBody: Balance): Promise<unknown> {
     const id = _requestBody.user_id;
@@ -104,6 +104,46 @@ export class OpenApiController {
     await this.balanceRepo.updateById(id, {balance: sum + _requestBody.balance})
     return
   }
+
+  /**
+     *
+     *
+     * @param _requestBody Created courier
+     */
+  @operation('get', '/balance/add', {
+    operationId: 'getBalance',
+    responses: {
+      '200': {
+        description: 'OK',
+      },
+    },
+    requestBody: {
+      content: {
+        'application/json': {
+          schema: {
+            $ref: '#/components/schemas/Balance',
+          },
+        },
+      },
+      description: 'Created courier',
+      required: true,
+    },
+  })
+  async getBalance(@requestBody({
+    content: {
+      'application/json': {
+        schema: {
+          $ref: '#/components/schemas/Balance',
+        },
+      },
+    },
+    description: 'Created balance',
+    required: true,
+  }) _requestBody: Balance): Promise<unknown> {
+    let result = await this.balanceRepo.findById(_requestBody.user_id);
+    return result
+  }
+
   /**
    *
    *
@@ -208,5 +248,45 @@ export class OpenApiController {
     await this.reserveRepo.deleteById(orderID);
     return
   }
+
+  /**
+    *
+    *
+    * @param _requestBody Created reserve balance
+    */
+  @operation('get', '/balance/reserve', {
+    operationId: 'getReserve',
+    responses: {
+      '200': {
+        description: 'OK',
+      },
+    },
+    requestBody: {
+      content: {
+        'application/json': {
+          schema: {
+            $ref: '#/components/schemas/BalanceReserve',
+          },
+        },
+      },
+      description: 'Created reserve balance',
+      required: true,
+    },
+  })
+  async getReserve(@requestBody({
+    content: {
+      'application/json': {
+        schema: {
+          $ref: '#/components/schemas/BalanceReserve',
+        },
+      },
+    },
+    description: 'Get reserve balance',
+    required: true,
+  }) _requestBody: BalanceReserve): Promise<unknown> {
+    let reserved = await this.reserveRepo.findById(_requestBody.order_id);
+    return reserved;
+  }
+
 }
 

@@ -18,6 +18,18 @@ paths:
               $ref: "#/components/schemas/Balance"
         description: Created courier
         required: true
+    get:
+      operationId: getBalance
+      responses:
+        "200":
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Balance"
+        description: Created courier
+        required: true
   /balance/reserve:
     post:
       operationId: reserveBalance
@@ -42,6 +54,18 @@ paths:
             schema:
               $ref: "#/components/schemas/BalanceReserve"
         description: Created reserve balance
+        required: true
+    get:
+      operationId: getReserve
+      responses:
+        "200":
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BalanceReserve"
+        description: get reserve balance
         required: true
 components:
   schemas:

@@ -24,6 +24,15 @@ Content-Type: application/json
 }
 
 ###
+GET {{baseurl}}/balance/add
+Content-Type: application/json
+
+{
+  "user_id": 2
+}
+
+
+###
 POST {{baseurl}}/balance/reserve
 Content-Type: application/json
 
@@ -33,6 +42,13 @@ Content-Type: application/json
     "price": 50
 }
 
+###
+GET {{baseurl}}/balance/reserve
+Content-Type: application/json
+
+{
+    "order_id": "abcd"
+}
 ###
 POST {{baseurl}}/balance/reserve
 Content-Type: application/json
